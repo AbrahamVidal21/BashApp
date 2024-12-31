@@ -1,3 +1,15 @@
+# Ignorar entornos virtuales
 virtualenv/
-__pycache__/
-./SqliteDB.db
+
+# Ignorar archivos de Python compilados
+*.pyc
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos de bases de datos locales
+*.sqlite
+
+# Ignorar configuraciones del editor de código
+.idea/
+.vscode/

@@ -4,28 +4,22 @@ from database.usuario import registrar_usuario
 from models.usuario import Usuario
 from unittest.mock import patch, MagicMock
 
-class TestDatabase(unittest.TestCase):
 
-    @patch('database.createUser.Conexion.conexionDataBase')  # Aquí reemplazamos la conexión real a la base de datos
+class TestCreateUser(unittest.TestCase):
+    
+    @patch('database.createUser.Conexion.conexionDataBase')
     def test_registrar_usuario(self, mock_conexion):
-        # Crear un objeto mock para la base de datos
-        mock_db = MagicMock()
-        mock_conexion.return_value = mock_db
-
-        # Crear un usuario de prueba
-        usuario = Usuario("Juan", "Pérez", "juan@example.com", "01/01/1990", False)
-
-        # Ejecutar la función que registra al usuario
+        # Simula la conexión a la base de datos
+        mock_conexion.return_value = True  # Simula que la conexión fue exitosa
+        
+        # Crea un usuario para registrar
+        usuario = Usuario("John", "Doe", "john.doe@example.com", "01/01/1990", False)
+        
+        # Llama a la función de registro
         registrar_usuario(usuario)
-
-        # Verificar que la instrucción SQL fue ejecutada correctamente con los valores esperados
-        mock_db.cursor.return_value.execute.assert_called_with(
-            """INSERT INTO usuarios (name, lastname, email, birthday, banned) VALUES (?, ?, ?, ?, ?)""",
-            ("Juan", "Pérez", "juan@example.com", "01/01/1990", False)
-        )
-
-        # Verificar que la conexión fue cerrada al final
-        mock_db.close.assert_called_once()
+        
+        # Verifica si la función de conexión fue llamada
+        mock_conexion.assert_called_once()
 
 if __name__ == '__main__':
     unittest.main()

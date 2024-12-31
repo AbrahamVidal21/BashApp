@@ -24,12 +24,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m venv venv
-          source venv/bin/activate  # Activa el entorno virtual
+          python -m venv virtualenv
+          source virtualenv/bin/activate  # Activa el entorno virtual
           pip install --upgrade pip
           pip install -r requirements.txt  # Instala las dependencias necesarias desde requirements.txt
 
       - name: Run tests
         run: |
-          source venv/bin/activate  # Activa el entorno virtual
+          source virtualenv/bin/activate  # Activa el entorno virtual
           python -m unittest discover tests  # Ejecuta los tests (puedes cambiar "tests" por tu carpeta de tests)
