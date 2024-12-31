@@ -1,0 +1,9 @@
+{
+    "acciones": {
+      "registrar": "registrar_usuario_interactivo",
+      "listar": "listar_usuarios",
+      "salir": "salir_del_programa",
+      "obtener_usuarioByEmail" : "obtener_usuarioByEmail"
+    }
+  }
+  
