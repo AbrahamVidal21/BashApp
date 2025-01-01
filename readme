@@ -1,3 +1,5 @@
+![Python CI](https://github.com/tu_usuario/tu_repositorio/actions/workflows/python-app.yml/badge.svg)
+
 # Proyecto Python - Gestión de Usuarios
 
 Este es un proyecto de Python que maneja la gestión de usuarios utilizando una base de datos SQLite. Permite registrar nuevos usuarios, listar usuarios existentes y buscar usuarios por correo electrónico. Además, cuenta con un sistema de animaciones para hacer la experiencia más interactiva.
