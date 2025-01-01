@@ -13,3 +13,4 @@ virtualenv/
 # Ignorar configuraciones del editor de código
 .idea/
 .vscode/
+.codegpt
